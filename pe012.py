@@ -23,15 +23,19 @@ Let us list the factors of the first seven triangle numbers:
 What is the value of the first triangle number to have over five hundred
 divisors?
 """
+from Primes import numberOfDivisors
+
 def triangleNumber(n):
     """
-    Returns the nth truiangle number
+    Returns the nth triangle number
     """
     return n*(n + 1)/2
 
 def answer():
-    return
+    n = 1
+    while numberOfDivisors(triangleNumber(n)) <= 500:
+        n += 1
+    return triangleNumber(n - 1)
 
 if __name__ == "__main__":
-    for i in xrange(1, 8):
-        print triangleNumber(i)
+    print answer()
