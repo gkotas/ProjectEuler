@@ -35,7 +35,7 @@ def answer():
     n = 1
     while numberOfDivisors(triangleNumber(n)) <= 500:
         n += 1
-    return triangleNumber(n - 1)
+    return triangleNumber(n)
 
 if __name__ == "__main__":
     print answer()

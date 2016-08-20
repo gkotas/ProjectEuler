@@ -16,7 +16,7 @@ answers = {
     "pe009": 31875000,
     "pe010": 142913828922,
     "pe011": 70600674,
-    "pe012": 76564125,
+    "pe012": 76576500,
     "pe013": 5537376230,
 }
 
@@ -42,7 +42,7 @@ def testProblem(problem):
     print "Testing problem %s..." % problem[2:],
     module = import_module(problem)
     if module.answer() == answers[problem]:
-        print "Passed!"
+        print ""
     else:
         print "Failed!"
 

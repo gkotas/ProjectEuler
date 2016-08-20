@@ -113,7 +113,7 @@ def answer():
     total = 0
     for number in numbers:
         total += int(number[:11])
-    return str(total)[:10]
+    return int(str(total)[:10])
 
 if __name__ == '__main__':
     print answer()
