@@ -7,10 +7,12 @@ Functions:
                    Name coming from xrange.
     nthPrime(n)  - Returns the nth prime number.
     factorize(n) - Returns list of all prime factors.
+    numberOfDivisors(n)
+                 - Returns number of divisors of n
 
 Private Functions:
     _optimizedSeiveOfEratosthenes() - Generator function that yields primes
-                                         indefinately.
+                                      indefinately.
 """
 import itertools
 ##### Private Functions ########################################################
@@ -76,6 +78,9 @@ def factorize(n):
     return prime_factors
 
 def numberOfDivisors(n):
+    """
+    Returns the total number of divisors of n.
+    """
     total = 1
     for p in factorize(n):
         total *= p[1] + 1
