@@ -16,13 +16,19 @@ Evaluate the sum of all the amicable numbers under 10000.
 
 d_memo = {}
 def d(n):
+    """
+    Returns the sum of the divisors of n.
+    """
     if n not in d_memo:
         # Start with 1 so n isn't counted
         total = 1
         # Loop from 2 to sqrt(n)
-        for i in xrange(2, int(n**0.5)):
+        for i in xrange(2, int(n**0.5) + 1):
             if n % i == 0:
-                total += i + n/i
+                total += i
+                # Only add the other divisor if it isn't a square
+                if i * i != n:
+                    total += n/i
 
         d_memo[n] = total
 
