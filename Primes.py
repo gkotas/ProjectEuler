@@ -2,8 +2,9 @@
 File that holds all functionality dealing with primes.
 
 Functions:
-    xprime(n)    - Generator that wraps the _optimizedSeiveOfEratosthenes()
-                   to allow it to terminate once the prime is greater than n.
+    xprime([start,] end)
+                 - Generator that wraps the _optimizedSeiveOfEratosthenes()
+                   to allow it to terminate once the prime is greater than end.
                    Name coming from xrange.
     nthPrime(n)  - Returns the nth prime number.
     factorize(n) - Returns list of all prime factors.
@@ -39,15 +40,21 @@ def _optimizedSeiveOfEratosthenes():
 
 ##### Public Functions #########################################################
 
-def xprime(n):
+def xprime(start, end=None):
     """
-    Generator that yields all primes less than or equal to n.
+    Generator that yields all primes less than or equal to end, starting with 2
+    or start if 2 args are specified.
     """
-    for prime in _optimizedSeiveOfEratosthenes():
-        if prime > n:
-            break
+    # If only one arg is specified, it's the end
+    if end == None:
+        start, end = 0, start
 
-        yield prime
+    for prime in _optimizedSeiveOfEratosthenes():
+        if prime > end:
+            break
+        
+        if prime > start:
+            yield prime
 
 def nthPrime(n):
     """
