@@ -1,15 +1,15 @@
 """
 File that holds all functionality dealing with primes.
-
 Functions:
     xprime([start,] end)
                  - Generator that wraps the _optimizedSeiveOfEratosthenes()
                    to allow it to terminate once the prime is greater than end.
                    Name coming from xrange.
     nthPrime(n)  - Returns the nth prime number.
+    isPrime(n)   - Determines if n is prime or not.
     factorize(n) - Returns list of all prime factors.
     numberOfDivisors(n)
-                 - Returns number of divisors of n
+                 - Returns number of divisors of n.
 
 Private Functions:
     _optimizedSeiveOfEratosthenes() - Generator function that yields primes
@@ -52,7 +52,7 @@ def xprime(start, end=None):
     for prime in _optimizedSeiveOfEratosthenes():
         if prime > end:
             break
-        
+
         if prime > start:
             yield prime
 
@@ -66,6 +66,17 @@ def nthPrime(n):
 
         if n == 0:
             return prime
+
+def isPrime(n):
+    """
+    Determines if n is prime.
+    """
+    for prime in _optimizedSeiveOfEratosthenes():
+        if prime > n:
+            return False
+
+        if prime == n:
+            return True
 
 def factorize(n):
     """
