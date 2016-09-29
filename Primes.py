@@ -71,12 +71,18 @@ def isPrime(n):
     """
     Determines if n is prime.
     """
-    for prime in _optimizedSeiveOfEratosthenes():
-        if prime > n:
-            return False
+    # Negatives and decimals are not prime
+    if n < 2 or int(n) != n:
+        return False
 
-        if prime == n:
+    for prime in _optimizedSeiveOfEratosthenes():
+        # If we get to a prime greater than sqrt(n), n is prime
+        if prime > n**0.5:
             return True
+
+        # If a prime divides n, it's not prime
+        if n % prime == 0:
+            return False
 
 def factorize(n):
     """
@@ -84,14 +90,19 @@ def factorize(n):
     """
     prime_factors = []
 
-    for p in xprime(n**.5):
+    for p in xprime(n):
         exp = 0
         while n % p == 0:
             exp += 1
             n /= p
 
-        if exp > 0:
+        # Only add to factors list if the exponent is greater than 0
+        if exp:
             prime_factors.append((p, exp))
+
+        # Quit if n becomes 1
+        if n == 1:
+            break
 
     return prime_factors
 
