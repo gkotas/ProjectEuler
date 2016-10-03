@@ -40,7 +40,7 @@ def f(n):
     """
     Memoized factorial function.
     """
-    if n == 1:
+    if n < 2:
         return 1
 
     if n not in f_memo:
