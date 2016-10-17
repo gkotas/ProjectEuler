@@ -43,8 +43,10 @@ answers = {
     "pe036": 872187,
     "pe037": 748317,
     "pe038": 932718654,
+    "pe039": 840,
 
 }
+
 
 def main(args):
     """
@@ -61,6 +63,7 @@ def main(args):
 
     cleanup_pyc()
 
+
 def testProblem(problem):
     """
     Tests the problem specified and reports if it passes or not.
@@ -71,6 +74,7 @@ def testProblem(problem):
         print ""
     else:
         print "Failed!"
+
 
 def cleanup_pyc():
     """
@@ -87,9 +91,10 @@ def cleanup_pyc():
         if filename.endswith(".pyc"):
             remove("%s%s%s" % (dir_path, slash, filename))
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Run through all the problems to make sure they still work."
+        description="Run through all the problems to make sure they still work"
     )
     parser.add_argument(
         "--problem",

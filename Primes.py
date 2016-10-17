@@ -16,7 +16,9 @@ Private Functions:
                                       indefinately.
 """
 import itertools
-##### Private Functions ########################################################
+
+
+##### Private Functions #######################################################
 
 def _optimizedSeiveOfEratosthenes():
     not_primes = {}
@@ -34,11 +36,12 @@ def _optimizedSeiveOfEratosthenes():
             # q is not ptime
             # Store the next odd, unknown not_prime in the form of N*p + q
             x = p + q
-            while x in not_primes or not (x&1):
+            while x in not_primes or not (x & 1):
                 x += p
             not_primes[x] = p
 
-##### Public Functions #########################################################
+
+##### Public Functions ########################################################
 
 def xprime(start, end=None):
     """
@@ -46,7 +49,7 @@ def xprime(start, end=None):
     or start if 2 args are specified.
     """
     # If only one arg is specified, it's the end
-    if end == None:
+    if end is None:
         start, end = 0, start
 
     for prime in _optimizedSeiveOfEratosthenes():
@@ -55,6 +58,7 @@ def xprime(start, end=None):
 
         if prime > start:
             yield prime
+
 
 def nthPrime(n):
     """
@@ -66,6 +70,7 @@ def nthPrime(n):
 
         if n == 0:
             return prime
+
 
 def isPrime(n):
     """
@@ -83,6 +88,7 @@ def isPrime(n):
         # If a prime divides n, it's not prime
         if n % prime == 0:
             return False
+
 
 def factorize(n):
     """
@@ -106,6 +112,7 @@ def factorize(n):
 
     return prime_factors
 
+
 def numberOfDivisors(n):
     """
     Returns the total number of divisors of n.
@@ -115,3 +122,15 @@ def numberOfDivisors(n):
         total *= p[1] + 1
 
     return total
+
+
+def isCoprime(a, b):
+    """
+    Determines if the two integers given are coprime.
+    """
+    # Continuously divide them until b is zero
+    while b:
+        a, b = b, a % b
+
+    # a and b are coprime if a reduced to 1
+    return a == 1
