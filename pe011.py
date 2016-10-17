@@ -31,7 +31,6 @@ The product of these numbers is 26 * 63 * 78 * 14 = 1788696.
 What is the greatest product of four adjacent numbers in the same direction
 (up, down, left, right, or diagonally) in the 20x20 grid?
 """
-
 grid = (
   8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8,
  49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48,  4, 56, 62,  0,
@@ -55,6 +54,7 @@ grid = (
   1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48,
 )
 
+
 def answer():
     max = 0
     for i in xrange(20):
@@ -64,36 +64,37 @@ def answer():
                 d_product = 1
                 for x in xrange(4):
                     d_product *= grid[(i + x)*20 + j]
-                
+
                 if d_product > max:
                     max = d_product
-                
+
                 # Down and right
                 if j < 17:
                     dr_product = 1
                     for x in xrange(4):
                         dr_product *= grid[(i + x)*20 + (j + x)]
-                    
+
                     if dr_product > max:
                         max = dr_product
-                
+
                 if j > 2:
                     dl_product = 1
                     for x in xrange(4):
                         dl_product *= grid[(i + x)*20 + (j - x)]
-                    
+
                     if dl_product > max:
                         max = dl_product
-            
+
             if j < 17:
                 l_product = 1
                 for x in xrange(4):
                     l_product *= grid[i*20 + (j + x)]
-                
+
                 if l_product > max:
                     max = l_product
-    
+
     return max
+
 
 if __name__ == "__main__":
     print answer()

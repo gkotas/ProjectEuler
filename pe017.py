@@ -10,10 +10,9 @@ words, how many letters would be used?
 
 NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and
 forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20
-letters. The use of "and" when writing out numbers is in compliance with British
-usage.
+letters. The use of "and" when writing out numbers is in compliance with
+British usage.
 """
-
 # Constants
 ONE = 3
 TWO = 3
@@ -46,10 +45,11 @@ HUNDRED = 7
 AND = 3
 THOUSAND = 8
 
+
 def answer():
     total = 0
     # Numbers 1-9 occur 9 times every hundred + 100 every hundred
-    total += ONE*(9*10 + 100 + 1) # + One thousand\
+    total += ONE*(9*10 + 100 + 1)  # + One thousand
     total += TWO*(9*10 + 100)
     total += THREE*(9*10 + 100)
     total += FOUR*(9*10 + 100)
@@ -90,6 +90,7 @@ def answer():
     # Thousand occurs once
     total += THOUSAND
     return total
+
 
 if __name__ == '__main__':
     print answer()

@@ -14,7 +14,10 @@ and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and
 Evaluate the sum of all the amicable numbers under 10000.
 """
 
+
 d_memo = {}
+
+
 def d(n):
     """
     Returns the sum of the divisors of n.
@@ -34,6 +37,7 @@ def d(n):
 
     return d_memo[n]
 
+
 def answer():
     # Use dictionary to store which numbers are amicable
     amicable = {}
@@ -44,6 +48,7 @@ def answer():
                 amicable[i] = True
                 amicable[d(i)] = True
     return sum(amicable.keys())
+
 
 if __name__ == '__main__':
     print answer()

@@ -11,6 +11,7 @@ Find the sum of the digits in the number 100!
 """
 from Combinatorics import f
 
+
 def answer():
     number = f(100)
     total = 0
@@ -19,6 +20,7 @@ def answer():
         total += int(digit)
 
     return total
+
 
 if __name__ == '__main__':
     print answer()

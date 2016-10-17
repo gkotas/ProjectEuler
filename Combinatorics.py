@@ -8,12 +8,13 @@ Functions:
 Private Functions:
 
 """
+##### Private Functions #######################################################
 
-##### Private Functions ########################################################
 
-
-##### Public Functions #########################################################
+##### Public Functions ########################################################
 nCr_memo = {}
+
+
 def nCr(n, r):
     """
     Memoized binomial coefficient function.
@@ -35,7 +36,10 @@ def nCr(n, r):
 
     return nCr_memo[(n, r)]
 
+
 f_memo = {}
+
+
 def f(n):
     """
     Memoized factorial function.

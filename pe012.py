@@ -25,17 +25,20 @@ divisors?
 """
 from Primes import numberOfDivisors
 
+
 def triangleNumber(n):
     """
     Returns the nth triangle number
     """
     return n*(n + 1)/2
 
+
 def answer():
     n = 1
     while numberOfDivisors(triangleNumber(n)) <= 500:
         n += 1
     return triangleNumber(n)
+
 
 if __name__ == "__main__":
     print answer()

@@ -19,6 +19,7 @@ How many Sundays fell on the first of the month during the twentieth century
 (1 Jan 1901 to 31 Dec 2000)?
 """
 
+
 def answer():
     total = 0
     # Starting days in the year 1899
@@ -32,6 +33,7 @@ def answer():
             if (1 + months[month] + year + year/4) % 7 == 1:
                 total += 1
     return total
+
 
 if __name__ == '__main__':
     print answer()

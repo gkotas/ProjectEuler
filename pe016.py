@@ -7,11 +7,13 @@ Problem 16
 What is the sum of the digits of the number 21000?
 """
 
+
 def answer():
     total = 0
     for digit in str(2**1000):
         total += int(digit)
     return total
+
 
 if __name__ == "__main__":
     print answer()

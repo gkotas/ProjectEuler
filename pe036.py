@@ -11,11 +11,13 @@ base 10 and base 2.
 leading zeros.)
 """
 
+
 def isPalindrome(string):
     """
     Determines if the string is palindromic.
     """
     return string == string[::-1]
+
 
 def answer():
     total = 0
@@ -33,6 +35,7 @@ def answer():
             total += p
 
     return total
+
 
 if __name__ == "__main__":
     print answer()

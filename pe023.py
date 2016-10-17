@@ -2,9 +2,9 @@
 Non-abundant sums
 Problem 23
 
-A perfect number is a number for which the sum of its proper divisors is exactly
-equal to the number. For example, the sum of the proper divisors of 28 would be
-1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
+A perfect number is a number for which the sum of its proper divisors is
+exactly equal to the number. For example, the sum of the proper divisors of 28
+would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
 
 A number n is called deficient if the sum of its proper divisors is less than n
 and it is called abundant if this sum exceeds n.
@@ -21,7 +21,10 @@ Find the sum of all the positive integers which cannot be written as the sum of
 two abundant numbers.
 """
 
+
 d_memo = {}
+
+
 def d(n):
     """
     Returns the sum of the divisors of n.
@@ -41,6 +44,7 @@ def d(n):
 
     return d_memo[n]
 
+
 def answer():
     # Make a list of all the abundants less than 28123
     abundants = []
@@ -59,6 +63,7 @@ def answer():
     # Return the difference of all the numbers less than 28123 and the sum of
     # all the abundant number.
     return 28123*(28123 + 1)/2 - sum(sum_of_abundants.keys())
+
 
 if __name__ == '__main__':
     print answer()

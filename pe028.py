@@ -17,6 +17,7 @@ What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed
 in the same way?
 """
 
+
 def answer():
     # Expand the spiral one more to find function that leads to next diagonal
     #
@@ -71,6 +72,7 @@ def answer():
         total += sw(x)
 
     return total
+
 
 if __name__ == "__main__":
     print answer()

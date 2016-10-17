@@ -36,6 +36,7 @@ containing one-hundred rows; it cannot be solved by brute force, and requires a
 clever method! ;o)
 """
 
+
 def answer():
     triangle = [
         [75],
@@ -60,6 +61,7 @@ def answer():
             triangle[i][j] += max(triangle[i + 1][j], triangle[i + 1][j + 1])
 
     return triangle[0][0]
+
 
 if __name__ == '__main__':
     print answer()

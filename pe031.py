@@ -14,9 +14,11 @@ It is possible to make 200p in the following way:
 How many different ways can 200p be made using any number of coins?
 """
 
+
 def answer():
     coins = [200, 100, 50, 20, 10, 5, 2, 1]
     return recurse(200, coins)
+
 
 def recurse(money, coins):
     # IF we get to 0p, that means its a valid partition
@@ -31,6 +33,7 @@ def recurse(money, coins):
     # Either we can add the coin and deduct the money left or we can skip this
     # coin. Add these two possiblities.
     return recurse(money - coins[0], coins) + recurse(money, coins[1:])
+
 
 if __name__ == "__main__":
     print answer()

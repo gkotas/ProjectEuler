@@ -9,8 +9,10 @@ What is the 10 001st prime number?
 """
 from Primes import nthPrime
 
+
 def answer():
     return nthPrime(10001)
+
 
 if __name__ == "__main__":
     print answer()

@@ -25,10 +25,13 @@ What is the index of the first term in the Fibonacci sequence to contain 1000
 digits?
 """
 
+
 fib_memo = {
     1: 1,
     2: 1,
 }
+
+
 def fib(n):
     """
     Returns the nth Fibonacci number.
@@ -37,6 +40,7 @@ def fib(n):
         fib_memo[n] = fib_memo[n - 1] + fib_memo[n - 2]
 
     return fib_memo[n]
+
 
 def answer():
     n = 3

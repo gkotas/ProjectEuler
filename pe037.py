@@ -14,6 +14,7 @@ NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 """
 from Primes import xprime, isPrime
 
+
 def answer():
     count = 0
     total = 0
@@ -43,6 +44,7 @@ def answer():
 
         if count == 11:
             return total
+
 
 if __name__ == "__main__":
     print answer()

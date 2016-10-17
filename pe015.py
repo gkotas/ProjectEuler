@@ -9,8 +9,10 @@ How many such routes are there through a 20x20 grid?
 """
 from Combinatorics import nCr
 
+
 def answer():
     return nCr(40, 20)
+
 
 if __name__ == "__main__":
     print answer()

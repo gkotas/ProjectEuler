@@ -17,11 +17,13 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 """
 
+
 def sumsSquared(x):
     """
     Returns the square of the sum of numbers 1 to x.
     """
     return sum(range(x + 1))**2
+
 
 def squaredSums(x):
     """
@@ -32,8 +34,10 @@ def squaredSums(x):
         ans += i*i
     return ans
 
+
 def answer():
     return sumsSquared(100) - squaredSums(100)
+
 
 if __name__ == "__main__":
     print answer()

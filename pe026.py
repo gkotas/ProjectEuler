@@ -17,15 +17,16 @@ unit fractions with denominators 2 to 10 are given:
 Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be
 seen that 1/7 has a 6-digit recurring cycle.
 
-Find the value of d < 1000 for which 1/d contains the longest recurring cycle in
-its decimal fraction part.
+Find the value of d < 1000 for which 1/d contains the longest recurring cycle
+in its decimal fraction part.
 """
 from Primes import xprime
 
+
 def isCyclic(prime):
     """
-    Determines if the reciprocal of the given prime is a cyclic number of length
-    prime - 1
+    Determines if the reciprocal of the given prime is a cyclic number of
+    length prime - 1
     """
     length = 0
     remainder = 1
@@ -42,12 +43,14 @@ def isCyclic(prime):
         if remainder == 1:
             return False
 
+
 def answer():
     ans = 0
     for p in xprime(7, 1000):
         if isCyclic(p):
             ans = p
     return ans
+
 
 if __name__ == '__main__':
     print answer()

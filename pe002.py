@@ -11,6 +11,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 """
 
+
 def answer():
     """
     Loops through fibonacci numbers, only adding even numbered that are less
@@ -23,10 +24,11 @@ def answer():
         # If even, add it
         if f1 & 1 == 0:
             sum += f1
-        
+
         f0, f1 = f1, f1 + f0
-    
+
     return sum
+
 
 if __name__ == "__main__":
     print answer()

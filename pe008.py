@@ -2,8 +2,8 @@
 Largest product in a series
 Problem 8
 
-The four adjacent digits in the 1000-digit number that have the greatest product
-are 9 * 9 * 8 * 9 = 5832.
+The four adjacent digits in the 1000-digit number that have the greatest
+product are 9 * 9 * 8 * 9 = 5832.
 
     73167176531330624919225119674426574742355349194934
     96983520312774506326239578318016984801869478851843
@@ -52,14 +52,15 @@ number = (
     "71636269561882670428252483600823257530420752963450"
 )
 
+
 def answer():
     max = 0
     start = 0
-    
+
     # Loop until there isn't 13 digits left
     while start + 13 <= len(number):
         product = 1
-        
+
         for i in xrange(13):
             product *= int(number[start + i])
             # If at any time the product is 0, quit and start with the digit
@@ -67,18 +68,19 @@ def answer():
             if product == 0:
                 start += i + 1
                 break
-        
+
         if product == 0:
             continue
-        
+
         # Store it if greater
         if product > max:
             max = product
-        
+
         # Start with the next digit
         start += 1
-    
+
     return max
+
 
 if __name__ == "__main__":
     print answer()

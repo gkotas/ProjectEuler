@@ -17,9 +17,11 @@ Find the sum of all the numbers that can be written as the sum of fifth powers
 of their digits.
 """
 
+
 def sumOfFifthPowers(n):
     """
-    Determines in n can be written as the sum of the fifth powers of its digits.
+    Determines in n can be written as the sum of the fifth powers of its
+    digits.
     """
     # Must have multiple digits
     if n < 10:
@@ -31,6 +33,7 @@ def sumOfFifthPowers(n):
 
     return total == n
 
+
 def answer():
     total = 0
     # Highest possible sum for 7 digits -> 7*9^5 = 413343 which isn't 7 digits
@@ -40,6 +43,7 @@ def answer():
             total += i
 
     return total
+
 
 if __name__ == "__main__":
     print answer()

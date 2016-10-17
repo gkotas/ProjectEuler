@@ -17,6 +17,7 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the
 concatenated product of an integer with (1,2, ... , n) where n > 1?
 """
 
+
 def answer():
     most = 918273645
     # The number must be 4 digits which will produce 5 digits when n = 2
@@ -44,6 +45,7 @@ def answer():
             most = int(str(i) + str(i*2))
 
     return most
+
 
 if __name__ == "__main__":
     print answer()

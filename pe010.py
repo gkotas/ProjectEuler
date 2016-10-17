@@ -8,12 +8,14 @@ Find the sum of all the primes below two million.
 """
 from Primes import xprime
 
+
 def answer():
     ans = 0
     for prime in xprime(2000000):
         ans += prime
-    
+
     return ans
+
 
 if __name__ == "__main__":
     print answer()

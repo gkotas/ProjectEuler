@@ -8,6 +8,7 @@ the product of two 2-digit numbers is 9009 = 91 * 99.
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
+
 def isPalindrome(x):
     """
     True if the number is a palindrome, False otherwise.
@@ -16,8 +17,9 @@ def isPalindrome(x):
     for i in xrange(len(x)/2):
         if x[i] != x[len(x) - i - 1]:
             return False
-    
+
     return True
+
 
 def answer():
     """
@@ -29,8 +31,9 @@ def answer():
             if isPalindrome(i*j):
                 if i*j > max:
                     max = i*j
-    
+
     return max
+
 
 if __name__ == "__main__":
     print answer()
