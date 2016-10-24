@@ -20,28 +20,7 @@ seen that 1/7 has a 6-digit recurring cycle.
 Find the value of d < 1000 for which 1/d contains the longest recurring cycle
 in its decimal fraction part.
 """
-from Primes import xprime
-
-
-def isCyclic(prime):
-    """
-    Determines if the reciprocal of the given prime is a cyclic number of
-    length prime - 1
-    """
-    length = 0
-    remainder = 1
-
-    while True:
-        length += 1
-        # Once the length reaches over half of the prime, it's cyclic
-        if length > prime//2:
-            return True
-
-        # Calculate the next digit by multiplying remainder by 10 and dividing
-        remainder = remainder*10 % prime
-        # Once there's only 1 remainder, the cycle ends and thus isn't cyclic
-        if remainder == 1:
-            return False
+from Primes import xprime, isCyclic
 
 
 def answer():

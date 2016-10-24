@@ -10,6 +10,9 @@ Functions:
     factorize(n) - Returns list of all prime factors.
     numberOfDivisors(n)
                  - Returns number of divisors of n.
+    isCoprime(a, b)
+                 - Determines if a and b have no prime factors in common.
+    isCyclic(p)  - Determines if the prime p has a cyclic reciprical.
 
 Private Functions:
     _optimizedSeiveOfEratosthenes() - Generator function that yields primes
@@ -19,7 +22,6 @@ import itertools
 
 
 ##### Private Functions #######################################################
-
 def _optimizedSeiveOfEratosthenes():
     not_primes = {}
     yield 2
@@ -42,7 +44,6 @@ def _optimizedSeiveOfEratosthenes():
 
 
 ##### Public Functions ########################################################
-
 def xprime(start, end=None):
     """
     Generator that yields all primes less than or equal to end, starting with 2
@@ -134,3 +135,24 @@ def isCoprime(a, b):
 
     # a and b are coprime if a reduced to 1
     return a == 1
+
+
+def isCyclic(prime):
+    """
+    Determines if the reciprocal of the given prime is a cyclic number of
+    length prime - 1
+    """
+    length = 0
+    remainder = 1
+
+    while True:
+        length += 1
+        # Once the length reaches over half of the prime, it's cyclic
+        if length > prime//2:
+            return True
+
+        # Calculate the next digit by multiplying remainder by 10 and dividing
+        remainder = remainder*10 % prime
+        # Once there's only 1 remainder, the cycle ends and thus isn't cyclic
+        if remainder == 1:
+            return False

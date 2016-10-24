@@ -24,13 +24,7 @@ What is the value of the first triangle number to have over five hundred
 divisors?
 """
 from Primes import numberOfDivisors
-
-
-def triangleNumber(n):
-    """
-    Returns the nth triangle number
-    """
-    return n*(n + 1)/2
+from MiscMath import triangleNumber
 
 
 def answer():

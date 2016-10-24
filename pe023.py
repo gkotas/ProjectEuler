@@ -20,29 +20,7 @@ this limit.
 Find the sum of all the positive integers which cannot be written as the sum of
 two abundant numbers.
 """
-
-
-d_memo = {}
-
-
-def d(n):
-    """
-    Returns the sum of the divisors of n.
-    """
-    if n not in d_memo:
-        # Start with 1 so n isn't counted
-        total = 1
-        # Loop from 2 to sqrt(n)
-        for i in xrange(2, int(n**0.5) + 1):
-            if n % i == 0:
-                total += i
-                # Only add the other divisor if it isn't a square
-                if i * i != n:
-                    total += n/i
-
-        d_memo[n] = total
-
-    return d_memo[n]
+from MiscMath import divisorSum as d
 
 
 def answer():

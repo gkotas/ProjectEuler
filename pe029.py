@@ -21,16 +21,14 @@ and 2 <= b <= 100?
 
 def answer():
     # This problem is small enogh to just brute force
-    d = {}
+    s = set()
     for a in xrange(2, 101):
         for b in xrange(2, 101):
-            # Add a^b to the dictionary if it isn't already there
-            x = a**b
-            if x not in d:
-                d[x] = True
+            # Add a^b to the set
+            s.add(a**b)
 
-    # Return how many entries are in the dictionary
-    return len(d)
+    # Return how many entries are in the set
+    return len(s)
 
 
 if __name__ == '__main__':
