@@ -7,6 +7,7 @@ Functions:
     isTriangular(x)     - Determines if x is a triangle number.
     pentagonNumber(n)   - Returns the nth pentagon number.
     isPentagonal(x)     - Determines if x is a pentagon number
+    hexagonNumber(n)    - Returns the nth hexagon number.
 
 
 Private Functions:
@@ -63,4 +64,11 @@ def isPentagonal(x):
     Determines if x is a pentagon number
     """
     return (24*x + 1)**0.5 % 6 == 5
+
+
+def hexagonNumber(n):
+    """
+    Returns the nth hexagon number
+    """
+    return n*(2*n - 1)
 
