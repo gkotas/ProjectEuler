@@ -41,8 +41,6 @@ def _optimizedSeiveOfEratosthenes():
             while x in not_primes or not (x & 1):
                 x += p
             not_primes[x] = p
-
-
 ##### Public Functions ########################################################
 def xprime(start, end=None):
     """
@@ -54,10 +52,10 @@ def xprime(start, end=None):
         start, end = 0, start
 
     for prime in _optimizedSeiveOfEratosthenes():
-        if prime > end:
+        if prime >= end:
             break
 
-        if prime > start:
+        if prime >= start:
             yield prime
 
 
@@ -73,22 +71,28 @@ def nthPrime(n):
             return prime
 
 
-def isPrime(n):
+def isPrime(n, primes=None):
     """
-    Determines if n is prime.
+    Determines if n is prime. If a list of primes is give, use that. Otherwise
+    generate them on the fly.
     """
-    # Negatives and decimals are not prime
-    if n < 2 or int(n) != n:
+    # Negatives, decimals, and evens are not prime
+    if n < 2 or int(n) != n or n & 1 == 0:
         return False
 
-    for prime in _optimizedSeiveOfEratosthenes():
+    if primes == None:
+        primes = _optimizedSeiveOfEratosthenes()
+
+    for prime in primes:
         # If we get to a prime greater than sqrt(n), n is prime
-        if prime > n**0.5:
+        if prime*prime > n:
             return True
 
         # If a prime divides n, it's not prime
         if n % prime == 0:
             return False
+
+    return True
 
 
 def factorize(n):
