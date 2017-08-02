@@ -72,3 +72,21 @@ def hexagonNumber(n):
     """
     return n*(2*n - 1)
 
+
+def ngonNumber(o, n):
+    """
+    Returns the nth ngon of the given order o.
+    """
+    return int(n*((o - 2)*n + 4 - o)//2)
+
+
+def ngonRoot(o, x):
+    """
+    Given a number x, returns the corresponding nth ngonal number of the order
+    o.
+              ___________________
+            \|(8o-16)x + (o-4)^2  + o - 4
+        n = ------------------------------
+                      2o - 4
+    """
+    return (((8*o - 16)*x + (o - 4)*(o - 4))**0.5 + o - 4)/float(2*o - 4)
