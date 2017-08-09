@@ -26,7 +26,7 @@ Find the product of the coefficients, aa and bb, for the quadratic expression
 that produces the maximum number of primes for consecutive values of n,
 starting with n = 0.
 """
-from Primes import xprime, isPrime
+from common.Primes import xprime, isPrime
 
 
 def primeChainCount(a, b):

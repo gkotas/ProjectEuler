@@ -18,7 +18,7 @@ What is the total of all the name scores in the file?
 
 def answer():
     # Read the file and make a list of names
-    with open("names.txt", "r") as f:
+    with open("textfiles/p022_names.txt", "r") as f:
         # Read the line, drop the last character, remove quotes, split at ","
         names = f.readlines()[0][:-1].replace("\"", "").split(",")
 

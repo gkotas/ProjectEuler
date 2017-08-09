@@ -39,7 +39,7 @@ def englishChar(i):
 
 
 def answer():
-    with open('cipher.txt') as f:
+    with open('textfiles/p059_cipher.txt') as f:
         # cipher.txt is only 1 line
         # Make a list of ints
         for line in f:

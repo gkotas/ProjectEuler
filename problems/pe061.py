@@ -26,7 +26,7 @@ Find the sum of the only ordered set of six cyclic 4-digit numbers for which
 each polygonal type: triangle, square, pentagonal, hexagonal, heptagonal, and
 octagonal, is represented by a different number in the set.
 """
-from MiscMath import ngonNumber, ngonRoot
+from common.MiscMath import ngonNumber, ngonRoot
 from math import ceil
 
 

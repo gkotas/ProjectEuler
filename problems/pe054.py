@@ -182,8 +182,7 @@ def evalHand(hand):
 
 def answer():
     wins = 0
-    loses = 0
-    with open('poker.txt') as f:
+    with open('textfiles/p054_poker.txt') as f:
         for line in f:
             p1 = line.strip()[:14].split()
             p2 = line.strip()[15:].split()

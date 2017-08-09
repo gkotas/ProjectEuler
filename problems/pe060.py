@@ -11,7 +11,7 @@ property.
 Find the lowest sum for a set of five primes for which any two primes
 concatenate to produce another prime.
 """
-from Primes import xprime, isPrime
+from common.Primes import xprime, isPrime
 
 
 def concatPair(a, b, primes):

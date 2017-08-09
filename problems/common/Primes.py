@@ -76,7 +76,9 @@ def isPrime(n, primes=None):
     Determines if n is prime. If a list of primes is give, use that. Otherwise
     generate them on the fly.
     """
-    # Negatives, decimals, and evens are not prime
+    if n == 2:
+        return True
+    # Negatives, decimals, and evens > 2 are not prime
     if n < 2 or int(n) != n or n & 1 == 0:
         return False
 

@@ -12,7 +12,7 @@ right and right to left.
 
 NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 """
-from Primes import xprime, isPrime
+from common.Primes import xprime, isPrime
 
 
 def answer():

@@ -9,7 +9,7 @@ their digits.
 
 Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 """
-from Combinatorics import f
+from common.Combinatorics import f
 
 
 def answer():

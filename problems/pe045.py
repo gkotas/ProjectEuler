@@ -13,9 +13,9 @@ It can be verified that T285 = P165 = H143 = 40755.
 
 Find the next triangle number that is also pentagonal and hexagonal.
 """
-from MiscMath import isTriangular as isT
-from MiscMath import isPentagonal as isP
-from MiscMath import hexagonNumber as H
+from common.MiscMath import isTriangular as isT
+from common.MiscMath import isPentagonal as isP
+from common.MiscMath import hexagonNumber as H
 
 
 def answer():

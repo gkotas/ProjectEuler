@@ -14,7 +14,7 @@ Find the pair of pentagonal numbers, Pj and Pk, for which their sum and
 difference are pentagonal and D = |Pk - Pj| is minimised; what is the value of
 D?
 """
-from MiscMath import pentagonNumber, isPentagonal
+from common.MiscMath import pentagonNumber, isPentagonal
 
 
 def answer():

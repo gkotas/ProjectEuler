@@ -7,7 +7,7 @@ the right and down, there are exactly 6 routes to the bottom right corner.
 
 How many such routes are there through a 20x20 grid?
 """
-from Combinatorics import nCr
+from common.Combinatorics import nCr
 
 
 def answer():

@@ -20,7 +20,7 @@ this limit.
 Find the sum of all the positive integers which cannot be written as the sum of
 two abundant numbers.
 """
-from MiscMath import divisorSum as d
+from common.MiscMath import divisorSum as d
 
 
 def answer():

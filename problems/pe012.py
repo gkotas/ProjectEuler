@@ -23,8 +23,8 @@ Let us list the factors of the first seven triangle numbers:
 What is the value of the first triangle number to have over five hundred
 divisors?
 """
-from Primes import numberOfDivisors
-from MiscMath import triangleNumber
+from common.Primes import numberOfDivisors
+from common.MiscMath import triangleNumber
 
 
 def answer():

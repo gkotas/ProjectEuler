@@ -16,7 +16,7 @@ Using words.txt (right click and 'Save Link/Target As...'), a 16K text file
 containing nearly two-thousand common English words, how many are triangle
 words?
 """
-from MiscMath import isTriangular
+from common.MiscMath import isTriangular
 
 
 def wordValue(word):
@@ -34,7 +34,7 @@ def wordValue(word):
 
 def answer():
     # Read the file and make a list of words
-    with open("words.txt", "r") as f:
+    with open("textfiles/p042_words.txt", "r") as f:
         # Read the line, remove quotes, split at ","
         words = f.readlines()[0].replace("\"", "").split(",")
 

@@ -8,7 +8,7 @@ also prime.
 
 What is the largest n-digit pandigital prime that exists?
 """
-from Primes import xprime
+from common.Primes import xprime
 
 
 def isPandigital(x):
