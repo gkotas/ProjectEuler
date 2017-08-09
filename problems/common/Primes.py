@@ -5,6 +5,7 @@ Functions:
                  - Generator that wraps the _optimizedSeiveOfEratosthenes()
                    to allow it to terminate once the prime is greater than end.
                    Name coming from xrange.
+    primeGen()   - Yields primes indefinitely
     nthPrime(n)  - Returns the nth prime number.
     isPrime(n)   - Determines if n is prime or not.
     factorize(n) - Returns list of all prime factors.
@@ -16,7 +17,7 @@ Functions:
 
 Private Functions:
     _optimizedSeiveOfEratosthenes() - Generator function that yields primes
-                                      indefinately.
+                                      indefinitely.
 """
 import itertools
 
@@ -41,6 +42,7 @@ def _optimizedSeiveOfEratosthenes():
             while x in not_primes or not (x & 1):
                 x += p
             not_primes[x] = p
+
 ##### Public Functions ########################################################
 def xprime(start, end=None):
     """
@@ -57,6 +59,9 @@ def xprime(start, end=None):
 
         if prime >= start:
             yield prime
+
+
+primeGen = _optimizedSeiveOfEratosthenes
 
 
 def nthPrime(n):
