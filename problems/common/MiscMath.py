@@ -8,6 +8,12 @@ Functions:
     pentagonNumber(n)   - Returns the nth pentagon number.
     isPentagonal(x)     - Determines if x is a pentagon number
     hexagonNumber(n)    - Returns the nth hexagon number.
+    ngonNumber(o, n)    - Returns the nth ngon of the given order o.
+    ngonRoot(o, x)      - Returns the corresponding nth ngonal number of the
+                          order o.
+    fromContinuedFraction(fraction)
+                        - Returns num and den from continued fraction.
+    digitSum(x)         - Returns the sum of all the digits in x.
 
 
 Private Functions:
@@ -90,3 +96,25 @@ def ngonRoot(o, x):
                       2o - 4
     """
     return (((8*o - 16)*x + (o - 4)*(o - 4))**0.5 + o - 4)/float(2*o - 4)
+
+
+def fromContinuedFraction(fraction):
+    """
+    Given a list representing a continued fraction, return a tuple of the
+    numerator and denominator.
+    """
+    n = 1
+    d = fraction.pop()
+    while True:
+        n += d*fraction.pop()
+        if fraction:
+            n, d = d, n
+        else:
+            return n, d
+
+
+def digitSum(x):
+    """
+    Returns the sum of all the digits in x.
+    """
+    sum(map(int, str(x)))

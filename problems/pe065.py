@@ -66,6 +66,7 @@ The sum of digits in the numerator of the 10th convergent is 1+4+5+7=17.
 Find the sum of digits in the numerator of the 100th convergent of the
 continued fraction for e.
 """
+from common.MiscMath import fromContinuedFraction, digitSum
 
 
 def answer():
@@ -77,14 +78,8 @@ def answer():
         e.append(2*i)
         e.append(1)
 
-    n = 1
-    d = e.pop()
-    while True:
-        n += d*e.pop()
-        if e:
-            n, d = d, n
-        else:
-            return sum(map(int, str(n)))
+    n, d = fromContinuedFraction(e)
+    return sum(map(int, str(n)))
 
 
 if __name__ == '__main__':
